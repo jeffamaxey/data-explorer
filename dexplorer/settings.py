@@ -16,10 +16,10 @@ tornado.options.parse_command_line()
 template_dir = path(ROOT, 'templates')
 static_dir = path(ROOT, 'static')
 
-settings = {}
-settings['debug'] = options.debug
-settings['static_path'] = static_dir
-settings['template_loader'] = tornado.template.Loader(template_dir)
-
+settings = {
+    'debug': options.debug,
+    'static_path': static_dir,
+    'template_loader': tornado.template.Loader(template_dir),
+}
 if options.config:
     tornado.options.parse_config_file(options.config)

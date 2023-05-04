@@ -36,7 +36,7 @@ class DataExplorer(object):
     def start(self):
         app = self.make_app()
         http_server = tornado.httpserver.HTTPServer(app)
-        logging.info("Listening on http://localhost:{}/".format(options.port))
+        logging.info(f"Listening on http://localhost:{options.port}/")
         http_server.listen(options.port)
         tornado.autoreload.start()
         tornado.autoreload.watch(os.path.join(template_dir, 'index.html'))
